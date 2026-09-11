@@ -55,7 +55,7 @@ context('Misc', () => {
       .its('stdout').should('contain', 'Jane Lane')
 
     if (Cypress.platform === 'win32') {
-      cy.exec(`print ${Cypress.config('configFile')}`)
+      cy.exec(`type ${Cypress.config('configFile')}`)
         .its('stderr').should('be.empty')
     } else {
       cy.exec(`cat ${Cypress.config('configFile')}`)
